@@ -1,15 +1,16 @@
-pipeline {
-  agent any
+ipeline {
+  agent 
+  {
+    node {
+        label 'windows1' 'windows2'
+         }
+  }
   stages {
     stage('version') {
       steps {
-        sh 'pwsh --version'
-      }
+             powershell 'Write-Output "Hello, World!"'
+           }
     }
-    stage('hello') {
-      steps {
-        sh 'pwsh hello.ps1'
-      }
-    }
+    
   }
 }
